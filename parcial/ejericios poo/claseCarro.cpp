@@ -32,22 +32,39 @@ void Carro::encender(int _llave){
         acceso = true;
         std::cout << "El carro se ha encendido" << std::endl;
     }else
-        std::cout << "La llave no es correcta" << std::endl;
+        acceso = false;
+        std::cout << "La llave no es correcta \n " << std::endl;
 }
 
 void Carro::acelerar(){
     if (acceso==true){
         velocidad= velocidad+10;
-        std::cout << "El carro se ha acelerado" << std::endl;
+        std::cout << "tu velocidad es "<<velocidad<< std::endl;
+    }else{
+        std::cout << "no puesdes acceso a acelerar \n" << std::endl;
+    }
+}
+
+void Carro::frenar (){
+    if (acceso==true){
+        velocidad= velocidad-10;
+        std::cout << "tu velocidad es "<<velocidad<< std::endl;
+    }else{
+        std::cout << "no puesdes acceso a frenar \n" << std::endl;
     }
 }
 
 
 
 
-
-int main(int argc, char const *argv[])
+int main()
 {
+    Carro bocho1=Carro(123, 55);
+    Carro bocho2=Carro(124, 56);
+    Carro bocho3=Carro(125, 57);
+    
+    bocho1.encender(123);
+
     system ("pause");
     return 0;
 }
